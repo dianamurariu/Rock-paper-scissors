@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock,Paper,Scissors</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <section class="left-side">
+      <h1>Rock Paper Scissors</h1>
+    </section>
+    <section class="right-side">
+      <section id="introduction" class="introduction-container">
+        <h2>Welcome to Rock, Paper, Scissors Game!</h2>
+        <p>Instructions:</p>
+        <ul>
+          <li>
+            Press 'Confirm' to start and play 5 rounds against the computer.
+          </li>
+          <li>Choose 'rock,' 'paper,' or 'scissors' to make your move.</li>
+          <li>Win each round based on the game rules.</li>
+          <li>Keep track of the round number and score.</li>
+          <li>Press 'Cancel' to quit the game.</li>
+        </ul>
+        <span class="buttons">
+          <button type="button" id="btn-cancel">Cancel</button>
+          <button type="button" id="btn-confirm">Confirm</button>
+        </span>
+      </section>
+      <div class="game-container hidden" id="game-section">
+        <section class="heading">
+          <h3>Round: <span id="round-number">1</span></h3>
+        </section>
+        <section class="timer">
+          <p id="timer-display"></p>
+        </section>
+        
+        <section id="moves-message">
+          <p>Choose your move</p>
+        </section>
+        <section class="moves" id="moves-section">
+          <img src="#" id="move-computer"></s>
+          <img src="#" id="move-user"></p>
+        </section>
+        <section class="score">
+          <h4>SCORE</h4>
+          <span></span>
+        </section>
+        <section class="options-game">
+          <button type="button" class="btn-option">
+            <img src="./images/rock.svg" alt="rock" width="100" height="100" />
+          </button>
+          <button type="button" class="btn-option">
+            <img
+              src="./images/paper.svg"
+              alt="paper"
+              width="100"
+              height="100"
+            />
+          </button>
+          <button type="button" class="btn-option">
+            <img
+              src="./images/scissors.svg"
+              alt="scissors"
+              width="100"
+              height="100"
+            />
+          </button>
+        </section>
+      </div>
+    </section>
+  </body>
+</html>
