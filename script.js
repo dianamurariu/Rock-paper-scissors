@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const gameSection = document.getElementById('game-section');
   const roundNumberElement = document.getElementById('round-number');
 
+  const movesImages = document.getElementById('moves-images');
+  const chooseMessage = document.getElementById('choose-move');
+
   const moveComputerElement = document.getElementById('move-computer');
   const moveUserElement = document.getElementById('move-user');
   const optionsButtons = document.querySelectorAll('.btn-option');
@@ -17,15 +20,24 @@ document.addEventListener('DOMContentLoaded', function () {
   btnCancel.addEventListener('click', cancelGame);
   btnConfirm.addEventListener('click', startGame);
 
-  optionsButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      userPlay(button.querySelector('img').src);
-    });
-  });
-
   function showIntroduction() {
     introductionSection.classList.remove('hidden');
     gameSection.classList.add('hidden');
+  }
+
+  function hideIntroduction() {
+    introductionSection.classList.add('hidden');
+    gameSection.classList.remove('hidden');
+  }
+
+  function showMovesImages() {
+    movesImages.classList.remove('hidden');
+    chooseMessage.classList.add('hidden');
+  }
+
+  function hideMovesImages() {
+    movesImages.classList.add('hidden');
+    chooseMessage.classList.remove('hidden');
   }
 
   function userPlay(userMove) {
@@ -40,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const computerMove = options[randomIndex].src;
     moveComputerElement.src = computerMove;
   }
+
+  optionsButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      userPlay(button.querySelector('img').src);
+      showMovesImages();
+    });
+  });
 
   function playRound() {
     const userMove = moveUserElement.src;
@@ -57,10 +76,10 @@ document.addEventListener('DOMContentLoaded', function () {
       computerScore++;
     }
     updateScore();
-    console.log(roundNumberElement);
+
     roundNumberElement.textContent = roundNumber;
 
-    if (roundNumber <= 5) {
+    if (roundNumber <= 7) {
       roundNumber++;
     } else {
       endGame();
@@ -73,8 +92,18 @@ document.addEventListener('DOMContentLoaded', function () {
     scoreElement.innerHTML = `<p>${computerScore}</p><p>${userScore}</p>`;
   }
   function startGame() {
-    introductionSection.classList.add('hidden');
-    gameSection.classList.remove('hidden');
+    hideMovesImages();
+    hideIntroduction();
+  }
+
+  function resetGame() {
+    computerScore = 0;
+    userScore = 0;
+    roundNumber = 1;
+    updateScore();
+    showIntroduction();
+    hideMovesImages();
+    window.location.reload();
   }
 
   function endGame() {
@@ -91,14 +120,5 @@ document.addEventListener('DOMContentLoaded', function () {
   function cancelGame() {
     alert('Game canceled!');
     resetGame();
-  }
-
-  function resetGame() {
-    computerScore = 0;
-    userScore = 0;
-    roundNumber = 1;
-    updateScore();
-    showIntroduction();
-    window.location.reload();
   }
 });
