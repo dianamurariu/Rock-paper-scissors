@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(roundNumberElement);
     roundNumberElement.textContent = roundNumber;
 
-    if (roundNumber < 5) {
+    if (roundNumber <= 5) {
       roundNumber++;
     } else {
       endGame();
@@ -99,127 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
     roundNumber = 1;
     updateScore();
     showIntroduction();
+    window.location.reload();
   }
 });
-
-// const showIntroduction = () => {
-//   const introductionMessage = `Welcome to Rock, Paper, Scissors Game!\n
-//   Instructions:\n
-//   - You will play against the computer for 5 rounds.
-//   - Choose 'rock', 'paper', or 'scissors' when prompted.
-//   - The winner of each round is determined by the game rules.
-//   - Press 'Cancel' at any time to quit the game.`;
-
-//   const userConfirmation = confirm(introductionMessage);
-
-//   if (!userConfirmation) {
-//     console.log('Game finished by the user.');
-//     return false; // Indicate that the user decided to quit
-//   }
-
-//   return true; // Indicate that the user wants to continue with the game
-// };
-
-// const computerPlay = () => {
-//   const random = Math.floor(Math.random() * 3);
-//   switch (random) {
-//     case 0:
-//       return 'rock';
-//     case 1:
-//       return 'paper';
-//     case 2:
-//       return 'scissors';
-//   }
-// };
-// const userPlay = () => {
-//   let userInput;
-
-//   do {
-//     userInput = prompt('Enter your choice: rock, paper, or scissors');
-//     // The user pressed cancel. Doesn't want to play or closed the game.
-//     if (userInput === null) {
-//       const userConfirmation = confirm(
-//         'Are you sure you want to quit the game?'
-//       );
-//       if (userConfirmation) {
-//         return null;
-//       }
-//     } else {
-//       userInput = userInput.toLowerCase();
-
-//       if (
-//         userInput === 'rock' ||
-//         userInput === 'paper' ||
-//         userInput === 'scissors'
-//       ) {
-//         return userInput;
-//       } else {
-//         alert('Invalid choice, please type: rock, paper, or scissors.');
-//       }
-//     }
-//   } while (true);
-// };
-// const winConditions = {
-//   rock: 'scissors',
-//   paper: 'rock',
-//   scissors: 'paper',
-// };
-
-// const playRound = (playerSelection, computerSelection) => {
-//   if (playerSelection === computerSelection) {
-//     return 'It is a tie!';
-//   } else if (winConditions[playerSelection] === computerSelection) {
-//     return 'Round won!';
-//   } else {
-//     return 'Round lost!';
-//   }
-// };
-
-// const game = () => {
-//   if (!showIntroduction()) {
-//     return; // End the game if the user decided to quit during the introduction
-//   }
-
-//   let scorePlayer = 0;
-//   let scoreComputer = 0;
-
-//   for (let i = 0; i < 5; i++) {
-//     const playerSelection = userPlay();
-//     // Check if the user canceled the game
-//     if (playerSelection === null) {
-//       console.log('Game canceled by the user.');
-//       return;
-//     }
-//     const computerSelection = computerPlay();
-//     const result = playRound(playerSelection, computerSelection);
-//     console.log(
-//       `Round: ${
-//         i + 1
-//       } : You threw: ${playerSelection.toUpperCase()} and the computer threw: ${computerSelection.toUpperCase()}. The result of this round is: ${result}`
-//     );
-
-//     if (result.includes('won')) {
-//       scorePlayer++;
-//     } else if (result.includes('lost')) {
-//       scoreComputer++;
-//     }
-
-//     console.log(
-//       `Current score - Your score: ${scorePlayer}, Computer's score: ${scoreComputer}`
-//     );
-//   }
-
-//   console.log(
-//     `Your final score: ${scorePlayer}, Computer's final score: ${scoreComputer}`
-//   );
-
-//   if (scorePlayer > scoreComputer) {
-//     console.log('Congratulations! You won!');
-//   } else if (scorePlayer < scoreComputer) {
-//     console.log('Sorry! You lost!');
-//   } else {
-//     console.log("It's a tie!");
-//   }
-// };
-
-// game();
