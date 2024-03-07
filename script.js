@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       computerScore++;
     }
-    updateScore();
 
     roundNumberElement.textContent = roundNumber;
 
@@ -85,6 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
       endGame();
       return;
     }
+
+    updateScore();
   }
 
   function updateScore() {
