@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const roundNumberElement = document.getElementById('round-number');
 
   const movesImages = document.getElementById('moves-images');
-  const chooseMessage = document.getElementById('choose-move');
+  const chooseMessage = document.getElementById('choose-message');
 
   const moveComputerElement = document.getElementById('move-computer');
   const moveUserElement = document.getElementById('move-user');
@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const scoreElement = document.querySelector('.score span');
     scoreElement.innerHTML = `<p>${computerScore}</p><p>${userScore}</p>`;
   }
+
   function startGame() {
     hideMovesImages();
     hideIntroduction();

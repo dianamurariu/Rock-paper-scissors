@@ -119,7 +119,7 @@ body {
   flex-direction: column;
   width: 500px;
 }
-#choose-move p {
+#choose-message p {
   text-align: center;
 }
 .moves {
