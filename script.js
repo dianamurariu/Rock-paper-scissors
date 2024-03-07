@@ -89,7 +89,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateScore() {
     const scoreElement = document.querySelector('.score span');
-    scoreElement.innerHTML = `<p>${computerScore}</p><p>${userScore}</p>`;
+    if (scoreElement) {
+      const userScoreElement = scoreElement.querySelector('p:last-child');
+      const computerScoreElement = scoreElement.querySelector('p:first-child');
+
+      userScoreElement.textContent = userScore;
+      computerScoreElement.textContent = computerScore;
+    } else {
+      console.error('Score element not found in the DOM.');
+    }
   }
 
   function startGame() {
