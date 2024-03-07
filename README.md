@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors Game
 
-Welcome to the Rock, Paper, Scissors game! This project is a simple and interactive game built with HTML, CSS and JS. The game includes instructions, round counting, user move images, random computer moves, score tracking and a final result alert after 7 rounds.
+Welcome to the Rock, Paper, Scissors game! This project is a simple and interactive game built with HTML, CSS and JS. 
 
 ## Live Demo
 
@@ -15,14 +15,6 @@ The Rock, Paper, Scissors game is a classic hand game where each player simultan
 - The winner of each round is determined by the rules: Rock crushes scissors, scissors cut paper and paper covers rock.
 - The game consists of 7 rounds.
 - After 7 rounds, the final result is displayed in an alert.
-
-## Project Structure
-
-The project is organized as follows:
-
-- **index.html**: The main HTML file containing the structure of the Rock, Paper, Scissors game.
-- **styles.css**: The CSS file with styles for different screen sizes and elements.
-- **script.js**: The JS file with logic to handle user input, computer moves, score counting, and result display.
 
 ## Features
 
