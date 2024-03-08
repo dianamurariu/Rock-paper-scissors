@@ -4,7 +4,7 @@ Welcome to the Rock, Paper, Scissors game! This project is a simple and interact
 
 ## Live Demo
 
-Check out the live demo of the Rock, Paper, Scissors game [here](https://dianamurariu.github.io/Rock-paper-scissors/).
+Check out the live demo of the Rock, Paper, Scissors game [here](https://rock-paper-scissors-two-ochre.vercel.app/).
 
 ## Introduction
 
